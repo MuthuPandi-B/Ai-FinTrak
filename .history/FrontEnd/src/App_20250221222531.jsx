@@ -10,7 +10,6 @@ import TransactionForm from './components/TransactionForm';
 import TransactionList from './features/transactions/TransactionList';
 import HomePage from './pages/HomePage';
 import Chart from './components/Chart';
-import Dashboard from './components/Dashboard';
 
 const App = () => {
   
@@ -19,7 +18,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/transactions" element={<TransactionList />} />
         <Route path="/add" element={<TransactionForm />} />
         <Route path="/login" element={<Login />} />
