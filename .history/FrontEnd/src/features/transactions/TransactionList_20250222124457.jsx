@@ -108,22 +108,22 @@ const TransactionList = () => {
     category: "",
   });
 
-  // useEffect(() => {
-  //   const fetchTransactions = async () => {
-  //     try {
-  //       const response = await API.get("/transactions", {
-  //         headers: {
-  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //         },
-  //       });
-  //       dispatch(setTransactions(response.data));
-  //     } catch (error) {
-  //       console.error("Error fetching transactions", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const response = await API.get("/transactions", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        dispatch(setTransactions(response.data));
+      } catch (error) {
+        console.error("Error fetching transactions", error);
+      }
+    };
 
-  //   fetchTransactions();
-  // }, [dispatch]);
+    fetchTransactions();
+  }, [dispatch]);
 
   const handleDelete = async (transactionId) => {
     if (window.confirm("Are you sure want to delete this transaction?")) {

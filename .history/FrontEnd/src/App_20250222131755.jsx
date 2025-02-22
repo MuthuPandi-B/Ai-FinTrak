@@ -1,6 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,27 +12,9 @@ import HomePage from './pages/HomePage';
 import Chart from './components/Chart';
 import Dashboard from './components/Dashboard';
 import { setTransactions } from './redux/transactionSlice';
-import API from './Api/Api';
 
 const App = () => {
   
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const fetchTransactions = async () => {
-      try {
-        const response = await API.get("/transactions", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
-        dispatch(setTransactions(response.data));
-      } catch (error) {
-        console.error("Error fetching transactions", error);
-      }
-    };
-
-    fetchTransactions();
-  }, [dispatch]);
   return (
     <Router >
       <Navbar />

@@ -14,7 +14,7 @@ import HomePage from './pages/HomePage';
 import Chart from './components/Chart';
 import Dashboard from './components/Dashboard';
 import { setTransactions } from './redux/transactionSlice';
-import API from './Api/Api';
+import A
 
 const App = () => {
   
