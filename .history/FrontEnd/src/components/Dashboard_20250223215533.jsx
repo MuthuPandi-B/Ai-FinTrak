@@ -63,42 +63,40 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="bg-gray-800 text-white p-4 w-full  md:w-1/4 min-w-[250px] 
-    shadow-md ">
- <h2 className="text-xl font-bold mb-4">Dashboard</h2>
+    <div className="bg-gray-900 text-white p-4 rounded-lg w-1/4 min-w-[250px] h-screen absolute top-[64px] left-0 bot">
+      <h2 className="text-xl font-bold mb-4">Dashboard</h2>
 
- {/* Filter Dropdown */}
- <select
-   className="p-2 w-full text-black rounded"
-   value={filterType}
-   onChange={(e) => setFilterType(e.target.value)}
- >
-   <option value="thisDay">This Day</option>
-   <option value="thisWeek">This Week</option>
-   <option value="thisMonth">This Month</option>
-   <option value="thisYear">This Year</option>
- </select>
+      {/* Filter Dropdown */}
+      <select
+        className="p-2 w-full text-black rounded"
+        value={filterType}
+        onChange={(e) => setFilterType(e.target.value)}
+      >
+        <option value="thisDay">This Day</option>
+        <option value="thisWeek">This Week</option>
+        <option value="thisMonth">This Month</option>
+        <option value="thisYear">This Year</option>
+      </select>
 
- <div className="mt-4">
-   <h3 className="text-lg font-semibold">Financial Summary</h3>
-   <p>Total Income: <span className="text-green-400">${totalIncome.toFixed(2)}</span></p>
-   <p>Total Expense: <span className="text-red-400">${totalExpense.toFixed(2)}</span></p>
-   <p>
-     Profit/Loss: 
-     <span className={profitLoss >= 0 ? "text-green-400" : "text-red-400"}>
-       ${profitLoss.toFixed(2)}
-     </span>
-   </p>
- </div>
+      <div className="mt-4">
+        <h3 className="text-lg font-semibold">Financial Summary</h3>
+        <p>Total Income: <span className="text-green-400">${totalIncome.toFixed(2)}</span></p>
+        <p>Total Expense: <span className="text-red-400">${totalExpense.toFixed(2)}</span></p>
+        <p>
+          Profit/Loss: 
+          <span className={profitLoss >= 0 ? "text-green-400" : "text-red-400"}>
+            ${profitLoss.toFixed(2)}
+          </span>
+        </p>
+      </div>
 
- {/* Category Analytics */}
- <div className="mt-4">
-   <h3 className="text-lg font-semibold">Category Analytics</h3>
-   <p>Max Spend: {maxExpenseCategory[0]} - ${maxExpenseCategory[1]}</p>
-   <p>Max Income: {maxIncomeCategory[0]} - ${maxIncomeCategory[1]}</p>
- </div>
-</div>
-
+      {/* Category Analytics */}
+      <div className="mt-4">
+        <h3 className="text-lg font-semibold">Category Analytics</h3>
+        <p>Max Spend: {maxExpenseCategory[0]} - ${maxExpenseCategory[1]}</p>
+        <p>Max Income: {maxIncomeCategory[0]} - ${maxIncomeCategory[1]}</p>
+      </div>
+    </div>
   );
 };
 

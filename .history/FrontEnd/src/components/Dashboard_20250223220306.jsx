@@ -63,8 +63,8 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="bg-gray-800 text-white p-4 w-full  md:w-1/4 min-w-[250px] 
-    shadow-md ">
+    <div className="bg-gray-900 text-white p-4 w-full rounded-lg md:w-1/4 min-w-[250px] 
+    shadow-md mt-16 mb-6">
  <h2 className="text-xl font-bold mb-4">Dashboard</h2>
 
  {/* Filter Dropdown */}

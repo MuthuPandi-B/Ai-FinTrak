@@ -7,35 +7,15 @@ import Chart from "../components/Chart";// Ensure correct import
 import { setTransactions } from '../redux/transactionSlice';
 import { useDispatch } from "react-redux";
 import API from "../Api/Api";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 
 
 const HomePage = () => {
-  const navigate = useNavigate();
-
   const dispatch =useDispatch();
   const user = useSelector((state) => state.auth.user);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-  const [showDashboard, setShowDashboard] = useState(!isMobile);
 
-  // Handle screen resize
-  useEffect(() => {
-    const handleResize = () => {
-      const mobileView = window.innerWidth < 1024;
-      setIsMobile(mobileView);
-      setShowDashboard(!mobileView); // Show dashboard on big screens, toggle on mobile
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-
- 
+  if(user){
     useEffect(() => {
-      if(!user) return
       const fetchTransactions = async () => {
         try {
           const response = await API.get("/transactions", {
@@ -52,7 +32,7 @@ const HomePage = () => {
       fetchTransactions();
     }, [dispatch]);
 
-  
+  }
 
 
   // Sample data for Pie Chart
@@ -74,7 +54,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row  p-6 bg-gray-50">
+    <div className="flex flex-col lg:flex-row  p-6">
         {/* Dashboard Button for Mobile */}
         {user && (
         <button 
@@ -86,7 +66,7 @@ const HomePage = () => {
       )}
 
       {/* Left Side - Dashboard if logged in, otherwise Dashboard Preview */}
-      <div className="hidden lg:block lg:w-1/4 w-full  p-6 rounded-lg shadow-md mb-6 lg:mb-0">
+      <div className="lg:w-1/4 w-full  p-6 rounded-lg shadow-md mb-6 lg:mb-0">
        
         {user ? (
           <Dashboard />
