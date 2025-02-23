@@ -143,6 +143,7 @@
 
 // export default ChartPage;
 
+
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { PieChart, Pie, Tooltip, Cell, BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend } from "recharts";
@@ -195,7 +196,7 @@ const ChartPage = () => {
       <h1 className="text-3xl font-bold text-center mb-8">Financial Overview</h1>
       <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-8 lg:space-y-0">
         {/* Pie Chart: Last Month Category-wise Expenses */}
-        <div className="w-full lg:w-1/2 p-6 rounded-lg shadow-lg bg-transparent">
+        <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-lg font-bold text-center mb-4">Category-wise Expenses ({lastMonthExpenses.month})</h2>
           {lastMonthExpenses.data.length > 0 ? (
             <ResponsiveContainer width="100%" height={400}>
@@ -223,7 +224,7 @@ const ChartPage = () => {
         </div>
 
         {/* Bar Chart: Last 3 Months Income vs Expense */}
-        <div className="w-full lg:w-1/2 p-6 rounded-lg shadow-lg bg-transparent">
+        <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-lg font-bold text-center mb-4">Income vs Expense (Last 3 Months)</h2>
           {incomeExpenseData.length > 0 ? (
             <ResponsiveContainer width="100%" height={400}>

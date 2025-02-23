@@ -15,7 +15,7 @@ const Transaction = () => {
   useEffect(() => {
     //Prefill form if editing
     if (selectedTransaction) {
-      console.log("Selected Transaction:", selectedTransaction._id);
+      console.log
       setAmount(selectedTransaction.amount);
       setType(selectedTransaction.type);
       setDescription(selectedTransaction.description);
@@ -58,11 +58,11 @@ const Transaction = () => {
         alert("Transaction added successfully");
       }
       dispatch(setSelectedTransaction(null));
-      // Reset form
-      setAmount("");
-      setType("income");
-      setDescription("");
-      onClearEdit();// Clear the form after edit
+      // // Reset form
+      // setAmount("");
+      // setType("income");
+      // setDescription("");
+      // onClearEdit();// Clear the form after edit
     } catch (error) {
       alert("Error adding transaction");
       console.error(error);

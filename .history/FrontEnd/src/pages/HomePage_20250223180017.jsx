@@ -99,47 +99,47 @@ const HomePage = () => {
   );
 };
 
-// export default HomePage;
+export default HomePage;
 
 
-// import React, { useState } from "react";
-// import Login from "../features/auth/Login";
-// import { useSelector } from "react-redux";
-// import Dashboard from "../components/Dashboard";
-// import ChartPage from "../components/Chart";
+import React, { useState } from "react";
+import Login from "../features/auth/Login";
+import { useSelector } from "react-redux";
+import Dashboard from "../components/Dashboard";
+import ChartPage from "../components/Chart";
 
-// const HomePage = () => {
-//   const user = useSelector((state) => state.auth.user);
-//   const [showDashboard, setShowDashboard] = useState(false);
+const HomePage = () => {
+  const user = useSelector((state) => state.auth.user);
+  const [showDashboard, setShowDashboard] = useState(false);
 
-//   return (
-//     <div className="flex flex-col lg:flex-row h-screen bg-gray-50">
-//       {/* Left Side - Dashboard */}
-//       {user && (
-//         <div
-//           className={`lg:w-1/4 w-ful  rounded-lg shadow-md fixed top-0 left-0 h-full transform transition-transform duration-300 ${
-//             showDashboard ? "translate-x-0" : "-translate-x-full"
-//           } lg:translate-x-0 z-10`}
-//           onMouseEnter={() => setShowDashboard(true)}
-//           onMouseLeave={() => setShowDashboard(false)}
-//         >
-//           <Dashboard />
-//         </div>
-//       )}
+  return (
+    <div className="flex flex-col lg:flex-row h-screen bg-gray-50">
+      {/* Left Side - Dashboard */}
+      {user && (
+        <div
+          className={`lg:w-1/4 w-full bg-white p-6 rounded-lg shadow-md fixed top-0 left-0 h-full transform transition-transform duration-300 ${
+            showDashboard ? "translate-x-0" : "-translate-x-full"
+          } lg:translate-x-0 z-10`}
+          onMouseEnter={() => setShowDashboard(true)}
+          onMouseLeave={() => setShowDashboard(false)}
+        >
+          <Dashboard />
+        </div>
+      )}
 
-//       {/* Center Section - Charts */}
-//       <div className={`flex-1 ${user ? "lg:ml-[25%]" : ""} mt-16 lg:mt-0`}>
-//         {user ? (
-//           <ChartPage />
-//         ) : (
-//           <div className="w-full max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
-//             <h2 className="text-xl font-bold mb-4 text-center">Login</h2>
-//             <Login />
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
+      {/* Center Section - Charts */}
+      <div className={`flex-1 p-6 ${user ? "lg:ml-[25%]" : ""} mt-16 lg:mt-0`}>
+        {user ? (
+          <ChartPage />
+        ) : (
+          <div className="w-full max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-bold mb-4 text-center">Login</h2>
+            <Login />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
-// export default HomePage;
+export default HomePage;

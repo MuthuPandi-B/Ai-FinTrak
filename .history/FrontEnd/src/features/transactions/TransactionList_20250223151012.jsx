@@ -107,7 +107,7 @@ const TransactionList = () => {
     type: "",
     category: "",
   });
-
+  useEffect(() => {
 
   // useEffect(() => {
   //   const fetchTransactions = async () => {

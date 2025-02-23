@@ -99,7 +99,7 @@ const HomePage = () => {
   );
 };
 
-// export default HomePage;
+export default HomePage;
 
 
 // import React, { useState } from "react";
@@ -117,7 +117,7 @@ const HomePage = () => {
 //       {/* Left Side - Dashboard */}
 //       {user && (
 //         <div
-//           className={`lg:w-1/4 w-ful  rounded-lg shadow-md fixed top-0 left-0 h-full transform transition-transform duration-300 ${
+//           className={`lg:w-1/4 w-full bg-white p-6 rounded-lg shadow-md fixed top-0 left-0 h-full transform transition-transform duration-300 ${
 //             showDashboard ? "translate-x-0" : "-translate-x-full"
 //           } lg:translate-x-0 z-10`}
 //           onMouseEnter={() => setShowDashboard(true)}
@@ -128,7 +128,7 @@ const HomePage = () => {
 //       )}
 
 //       {/* Center Section - Charts */}
-//       <div className={`flex-1 ${user ? "lg:ml-[25%]" : ""} mt-16 lg:mt-0`}>
+//       <div className={`flex-1 p-6 ${user ? "lg:ml-[25%]" : ""} mt-16 lg:mt-0`}>
 //         {user ? (
 //           <ChartPage />
 //         ) : (
