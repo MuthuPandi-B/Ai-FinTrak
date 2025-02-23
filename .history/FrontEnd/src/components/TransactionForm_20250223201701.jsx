@@ -62,10 +62,9 @@ const Transaction = () => {
         dispatch(addTransaction(response.data)); 
              
       // Reset form
-      setDate(new Date().toISOString().split("T")[0]);
-      setAmount("");
-      setType("income");
-      setDescription("");
+      // setAmount("");
+      // setType("income");
+      // setDescription("");
         // onClearEdit();// Clear the form after edit//add new transaction to redux state
         alert("Transaction added successfully");
       }

@@ -32,7 +32,7 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
 
       //Remove auth state from localStorage on logout
-      localStorage.clear();
+      localStorage.removeItem
     },
   },
 });

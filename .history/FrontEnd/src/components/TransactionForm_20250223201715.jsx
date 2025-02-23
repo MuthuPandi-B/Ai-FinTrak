@@ -62,7 +62,7 @@ const Transaction = () => {
         dispatch(addTransaction(response.data)); 
              
       // Reset form
-      setDate(new Date().toISOString().split("T")[0]);
+      set
       setAmount("");
       setType("income");
       setDescription("");

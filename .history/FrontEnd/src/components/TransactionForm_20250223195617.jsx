@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { addTransaction,updateTransaction,setSelectedTransaction} from "../redux/transactionSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import API from "../Api/Api.js";
-import { useNavigate } from "react-router-dom";
 
 const Transaction = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const selectedTransaction =useSelector((state)=>state.transactions.selectedTransaction);
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("income");
@@ -50,27 +48,22 @@ const Transaction = () => {
           }
         );
         dispatch(updateTransaction(response.data));
-        dispatch(setSelectedTransaction(null));
         alert("Transaction updated successfully");
-      
       } else {
         const response = await API.post("/transactions/add", transactionData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`, // Send token for authentication
           },
         });
-        dispatch(addTransaction(response.data)); 
-             
-      // Reset form
-      setDate(new Date().toISOString().split("T")[0]);
-      setAmount("");
-      setType("income");
-      setDescription("");
-        // onClearEdit();// Clear the form after edit//add new transaction to redux state
+        dispatch(addTransaction(response.data)); //add new transaction to redux state
         alert("Transaction added successfully");
       }
-      navigate("/transactions");
-
+      // dispatch(setSelectedTransaction(null));
+      // // Reset form
+      // setAmount("");
+      // setType("income");
+      // setDescription("");
+      // onClearEdit();// Clear the form after edit
     } catch (error) {
       alert("Error adding transaction");
       console.error(error);

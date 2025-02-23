@@ -19,26 +19,6 @@ import API from './Api/Api';
 const App = () => {
   const user=localStorage.getItem('token');
   if(user){
-    const dispatch = useDispatch();
-    useEffect(() => {
-      const fetchTransactions = async () => {
-        try {
-          const response = await API.get("/transactions", {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          });
-          dispatch(setTransactions(response.data));
-        } catch (error) {
-          console.error("Error fetching transactions", error);
-        }
-      };
-  
-      fetchTransactions();
-    }, [dispatch]);
-
-    
-  }
 
   return (
     <Router >

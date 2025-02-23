@@ -37,9 +37,6 @@ const App = () => {
       fetchTransactions();
     }, [dispatch]);
 
-    
-  }
-
   return (
     <Router >
       <Navbar />

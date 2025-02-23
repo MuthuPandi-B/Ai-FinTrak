@@ -54,9 +54,9 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row  p-6 bg-gray-500">
+    <div className="flex flex-col lg:flex-row h-screen p-6 bg-gray-50">
       {/* Left Side - Dashboard if logged in, otherwise Dashboard Preview */}
-      <div className="lg:w-1/4 w-full bg-blue-500 p-6 rounded-lg shadow-md mb-6 lg:mb-0">
+      <div className="lg:w-1/4 w-full bg-white p-6 rounded-lg shadow-md mb-6 lg:mb-0">
         {user ? (
           <Dashboard />
         ) : (
@@ -82,7 +82,7 @@ const HomePage = () => {
 
         {/* If logged in, show financial chart (Replace with your actual Chart component) */}
         {user ? (
-          <Chart />
+          // <Chart />
         ) : (
           <>
             {/* Pie Chart */}
