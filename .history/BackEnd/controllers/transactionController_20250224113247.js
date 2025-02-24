@@ -72,7 +72,7 @@ const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:g
     const category =
   apiResponse?.data?.candidates?.[0]?.content?.parts?.map(part => part.text).join(" ").trim() || "Uncategorized";
 
-// console.log("Extracted Category:", category);
+console.log("Extracted Category:", category);
 
       // Create new transaction
       const newTransaction = new Transaction({

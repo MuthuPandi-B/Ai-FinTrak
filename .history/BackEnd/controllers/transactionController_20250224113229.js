@@ -11,7 +11,7 @@ export const addTransaction = async (req, res) => {
     const apiKey = process.env.AI_API_KEY;
 
     if (!apiKey) {
-      // console.log("Error: API key is not defined.");
+      console.log("Error: API key is not defined.");
       return res
         .status(500)
         .json({ message: "Server configuration error: Missing API key" });
@@ -28,7 +28,7 @@ const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:g
     // const apiUrl =
     //   "https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english";
 
-    // console.log("Prompt to AI Service:", promptText);
+    console.log("Prompt to AI Service:", promptText);
 
     await new Promise((resolve) => setTimeout(resolve, 5000)); // Optional delay for testing
 
@@ -57,7 +57,7 @@ const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:g
         headers: { "Content-Type": "application/json" }
       }
     );
-    // console.log("Full API Response:", JSON.stringify(apiResponse.data, null, 2)); // Log full response
+    console.log("Full API Response:", JSON.stringify(apiResponse.data, null, 2)); // Log full response
 
     // const response = apiResponse?.candidates[0].content.parts[0].text.replace(
     //   /\*\*(.*?)\*\*/g,
@@ -72,7 +72,7 @@ const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:g
     const category =
   apiResponse?.data?.candidates?.[0]?.content?.parts?.map(part => part.text).join(" ").trim() || "Uncategorized";
 
-// console.log("Extracted Category:", category);
+console.log("Extracted Category:", category);
 
       // Create new transaction
       const newTransaction = new Transaction({

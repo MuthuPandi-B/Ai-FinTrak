@@ -17,7 +17,7 @@ const Transaction = () => {
   useEffect(() => {
     //Prefill form if editing
     if (selectedTransaction) {
-      // console.log("Selected Transaction:", selectedTransaction._id);
+      console.log("Selected Transaction:", selectedTransaction._id);
       setAmount(selectedTransaction.amount);
       setType(selectedTransaction.type);
       setDescription(selectedTransaction.description);

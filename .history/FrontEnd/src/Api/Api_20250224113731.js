@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API= axios.create({
-  // baseURL: "http://localhost:5000/api", // Adjust to your backend's base URL
+  baseURL: "http://localhost:5000/api", // Adjust to your backend's base URL
   baseURL: "https://ai-fintrak.onrender.com/api", // Adjust to your backend's base URL
 });
 
