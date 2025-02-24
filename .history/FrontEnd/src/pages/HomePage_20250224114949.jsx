@@ -143,7 +143,6 @@ const HomePage = () => {
               </ResponsiveContainer>
             </div>
           </> */}
-          </>
         )}
       </div>
 

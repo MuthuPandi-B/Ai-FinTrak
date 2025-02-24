@@ -131,7 +131,7 @@ const HomePage = () => {
             </div>
 
             {/* Line Chart */}
-            {/* <div className="w-full max-w-md overflow-hidden">
+            <div className="w-full max-w-md overflow-hidden">
               <h3 className="text-lg font-bold text-center">Monthly Balance Trend</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={lineData}>
@@ -142,7 +142,6 @@ const HomePage = () => {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-          </> */}
           </>
         )}
       </div>
