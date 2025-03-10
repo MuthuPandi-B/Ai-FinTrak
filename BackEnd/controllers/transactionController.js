@@ -9,15 +9,16 @@ export const addTransaction = async (req, res) => {
     // console.log("Incoming transaction data:", req.body);
 
     const apiKey = process.env.AI_API_KEY;
+    let category="Uncategorized";
 
     if (!apiKey) {
       // console.log("Error: API key is not defined.");
       return res
         .status(500)
         .json({ message: "Server configuration error: Missing API key" });
-    }
-
-  
+    }else{
+      try{
+        
 
     // Prepare the prompt for categorization
     const promptText = `Categorize this word in one word like in which category it belongs like food and drinks ,Travel,Medicine,...: '${description}'`;
@@ -69,10 +70,17 @@ const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-p
     //   const category =
     //     response.data[0]?.generated_text?.trim() || "Uncategorized"; // Extract category
     //   console.log("Category received from AI:", category);
-    const category =
+     category =
   apiResponse?.data?.candidates?.[0]?.content?.parts?.map(part => part.text).join(" ").trim() || "Uncategorized";
 
 // console.log("Extracted Category:", category);
+      }
+      catch (apiError) {
+        console.error("AI API request failed:", apiError.message);
+      }
+    }
+
+  
 
       // Create new transaction
       const newTransaction = new Transaction({
