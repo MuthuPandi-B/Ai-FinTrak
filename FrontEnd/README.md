@@ -1,8 +1,12 @@
-# React + Vite
+# 💰 AI-FinTrack (Frontend)  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-FinTrack is an **AI-powered financial tracking application** designed to help users manage their **income, expenses, and savings efficiently**. It provides **insightful analytics, visual charts, and transaction tracking** to enhance financial decision-making.  
 
-Currently, two official plugins are available:
+This is the **frontend** of AI-FinTrack, built with **React.js** and styled using **Tailwind CSS** for a modern, responsive user interface. The application follows a **modular and scalable architecture**, ensuring efficient data management and seamless user experience.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features  
+- 📊 **Dashboard Overview** – Get a summary of financial data.  
+- 📈 **Visual Charts & Analytics** – Interactive charts for income & expenses.  
+- 💳 **Transaction Tracking** – Log income and expenses effortlessly.  
+- 🔐 **User Authentication** – Secure login and signup.  
+- 🎨 **Responsive UI** – Built with **Tailwind CSS** for a sleek design.  
