@@ -23,7 +23,7 @@ export const addTransaction = async (req, res) => {
     const promptText = `Categorize this word in one word like in which category it belongs like food and drinks ,Travel,Medicine,...: '${description}'`;
    
     const API_KEY = process.env.API_KEY;
-const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`
+const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=${API_KEY}`
 
     // const apiUrl =
     //   "https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english";
